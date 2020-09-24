@@ -132,3 +132,112 @@ body{
         transform: rotate(180deg);
     }
 }
+@keyframes From02{
+    from{
+        bottom: 0;
+        left: 0;
+    }
+    to{
+        bottom: 0;
+        left: calc(100% - 7px);
+        transform: rotate(180deg);
+    }
+}
+@keyframes From05{
+    from{
+        bottom: 0;
+        left: 0;
+    }
+    to{
+        bottom: 0;
+        left: calc(100% - 7px);
+        transform: rotate(180deg);
+    }
+}
+@keyframes From06{
+    from{
+        bottom: -22px;
+        left: 7px;
+        transform: rotate(-90deg) translate(-50%,50%);
+    }
+    to{
+        bottom: 0;
+        left: calc(100% - 7px);
+        transform: rotate(180deg) translate(0,0);
+    }
+}
+.TimeOptions{
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+}
+.Numbers>span{
+    font-size: 0 7px;
+    color: aliceblue;
+}
+.Formats span{
+    display: none;
+    color: aliceblue;
+    font-size: 2em;
+    cursor: default;
+}
+.Formats .active{
+    display: block;
+}
+
+.Type{
+    display: flex;
+    flex-direction: column;
+    color: #98afaf;
+}
+
+.Type span{
+    position: relative;
+    margin: 2px 0;
+    cursor: pointer;
+}
+
+.Type span::before{
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #98afaf;
+    transition: all .4s ease;
+}
+
+.Type span:hover::before{
+    width: 100%;
+}
+
+.TimeFormat{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 110px;
+}
+
+.Type .active{
+    color: aquamarine;    
+}
+.Type .active::after{
+    content: "\f053";
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translate(-50%,-50%);
+}
+
+.Type .active::before{
+    width: 100%;
+}
+
+.TimeOptions i{
+    margin: 10px 3px;
+    position: relative;
+    cursor: pointer;
+}
