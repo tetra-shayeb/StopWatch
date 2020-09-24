@@ -1,23 +1,28 @@
 body{
-    background-color: #7b1fa2;
+    background-color: #7B1FA2;
+    font-family: 'Text Me One', sans-serif;
 }
+
 .container{
     width: 90%;
     max-width: 1400px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     display: flex;
     justify-content: center;
 }
+
 .ClockHolder{
     width: 500px;
     background-color: #1b252a;
     padding: 30px 50px;
-    border: 3px solid #0277bd ;
+    border-radius: 15px;
+    border: 3px solid #0277BD;
     position: relative;
 }
+
 .ClockHolder::after{
     content: " ";
     position: absolute;
@@ -26,12 +31,15 @@ body{
     width: 70%;
     height: 15px;
     background-color: #0277bd;
+    transform: translate(-50%,0);
     border-radius: 3px 3px 8px 8px;
 }
+
 .ClockHolder::before{
 
 }
-.weekDayes{
+
+.WeekDays{
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -39,31 +47,88 @@ body{
     color: #646c72;
     cursor: default;
 }
-.weekDayes .active{
+
+.WeekDays .active{
     color: aliceblue;
     position: relative;
 }
-.weekDayes .active::after{
-    content: " ";
+
+.WeekDays .active::after{
+    content: "";
     position: absolute;
     bottom: -3px;
     left: 0;
     height: 2px;
     width: 100%;
     background-color: aliceblue;
-} 
-.Numper, .TimeHolder{
+}
+
+.Numbers,
+.TimeHolder{
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     width: 100%;
     padding: 20px 0 5px;
     align-items: flex-end;
 }
-.NumperHolder{
+
+.NumberHolder{
     position: relative;
     width: 60px;
-    height: 59px;
+    height: 95px;
+}
+
+.d1 , .d2 , .d3 , .d4 , .d5 , .d6 , .d7{
+    width: 8px;
+    height: 40px;
+    background-color: azure;
+    position: absolute;
+}
+
+.d1::after , .d2::after , .d3::after , .d4::after , .d5::after , .d6::after , .d7::after{
+    content: "";
+    position: absolute;
+    background-color: azure;
+    width: 7px;
+    height: 7px;
+    top: -7px;
+    left: 0;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
 
 
+.d1::before , .d2::before , .d3::before , .d4::before , .d5::before , .d6::before , .d7::before{
+    content: "";
+    position: absolute;
+    background-color: azure;
+    width: 7px;
+    height: 7px;
+    bottom: -7px;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+.d7{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(90deg);
+}
 
+.d7::before{
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.d7::after{
+    clip-path: polygon(0 100%, 100% 100%, 50% 0);
+}
+
+@keyframes From01{
+    from{
+        top: 0;
+        left: 0;
+    }
+    to{
+        top: 0;
+        left: calc( 100% - 7px );
+        transform: rotate(180deg);
+    }
+}
