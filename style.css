@@ -1,0 +1,69 @@
+body{
+    background-color: #7b1fa2;
+}
+.container{
+    width: 90%;
+    max-width: 1400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+}
+.ClockHolder{
+    width: 500px;
+    background-color: #1b252a;
+    padding: 30px 50px;
+    border: 3px solid #0277bd ;
+    position: relative;
+}
+.ClockHolder::after{
+    content: " ";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 70%;
+    height: 15px;
+    background-color: #0277bd;
+    border-radius: 3px 3px 8px 8px;
+}
+.ClockHolder::before{
+
+}
+.weekDayes{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-transform: uppercase;
+    color: #646c72;
+    cursor: default;
+}
+.weekDayes .active{
+    color: aliceblue;
+    position: relative;
+}
+.weekDayes .active::after{
+    content: " ";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: aliceblue;
+} 
+.Numper, .TimeHolder{
+    display: flex;
+    justify-content:space-around;
+    width: 100%;
+    padding: 20px 0 5px;
+    align-items: flex-end;
+}
+.NumperHolder{
+    position: relative;
+    width: 60px;
+    height: 59px;
+}
+
+
+
